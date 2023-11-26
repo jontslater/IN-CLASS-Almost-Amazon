@@ -15,7 +15,7 @@ const getAuthors = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: FILTER FAVORITE AUTHORS
+// FIXME: FILTER BOOKS ON SALE
 const faveAuthors = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors.json?orderBy="favorite"&equalTo=true`, {
     method: 'GET',
@@ -35,17 +35,7 @@ const createAuthor = () => {};
 const getSingleAuthor = () => {};
 
 // FIXME: DELETE AUTHOR
-const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${firebaseKey}.json`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
+const deleteSingleAuthor = () => {};
 
 // FIXME: UPDATE AUTHOR
 const updateAuthor = () => {};
