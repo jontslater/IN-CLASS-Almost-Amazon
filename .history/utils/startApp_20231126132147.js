@@ -7,7 +7,6 @@ import navigationEvents from '../events/navigationEvents';
 import { showBooks } from '../pages/books';
 import { getBooks } from '../api/bookData';
 import { getAuthors } from '../api/authorData';
-import { showAuthors } from '../pages/authors';
 
 const startApp = () => {
   getBooks().then(showBooks);
@@ -17,7 +16,7 @@ const startApp = () => {
   navBar(); // DYNAMICALLY ADD THE NAV
   logoutButton(); // ADD THE LOGOUT BUTTON COMPONENT
   navigationEvents(); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
-  getAuthors().then(showAuthors);
+  getAuthors().then(getBooks);
 };
 
 export default startApp;

@@ -30,7 +30,7 @@ const navigationEvents = () => {
 
   // Favorite Authors
   document.querySelector('#faveAuthors').addEventListener('click', () => {
-    faveAuthors().then(showAuthors);
+    getAuthors().then(faveAuthors);
   });
 
   // STRETCH: SEARCH

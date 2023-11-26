@@ -1,7 +1,7 @@
 import { signOut } from '../utils/auth';
 import { booksOnSale, getBooks } from '../api/bookData';
 import { showBooks } from '../pages/books';
-import { faveAuthors, getAuthors } from '../api/authorData';
+import { faveAuthors, getAuthorBooks, getAuthors } from '../api/authorData';
 import { showAuthors } from '../pages/authors';
 
 // navigation events
@@ -30,7 +30,7 @@ const navigationEvents = () => {
 
   // Favorite Authors
   document.querySelector('#faveAuthors').addEventListener('click', () => {
-    faveAuthors().then(showAuthors);
+    faveAuthors().then(getAuthorBooks);
   });
 
   // STRETCH: SEARCH
