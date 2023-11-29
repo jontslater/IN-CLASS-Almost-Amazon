@@ -48,12 +48,13 @@ const domEvents = () => {
         });
       }
     }
+
     // FIXME: ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
       addBookForm();
     }
     // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR
-    if (e.target.id.includes('update-author')) {
+    if (e.target.id.includes('edit-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleAuthor(firebaseKey).then((bookObj) => addAuthorForm(bookObj));
       // getSingleBook(firebaseKey).then(addBookForm); // using the callback method

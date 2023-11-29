@@ -1,4 +1,3 @@
-import { updateAuthor } from '../api/authorData';
 import { createBook, getBooks, updateBook } from '../api/bookData';
 import { showBooks } from '../pages/books';
 
@@ -63,7 +62,7 @@ const formEvents = () => {
       });
     }
     // FIXME:ADD CLICK EVENT FOR EDITING AN AUTHOR
-    if (e.target.id.includes('update-author')) {
+    if (e.target.id.includes('update-book')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         title: document.querySelector('#title').value,
@@ -75,7 +74,7 @@ const formEvents = () => {
         firebaseKey,
       };
 
-      updateAuthor(payload).then(() => {
+      updateBook(payload).then(() => {
         getBooks().then(showBooks);
       });
     }
