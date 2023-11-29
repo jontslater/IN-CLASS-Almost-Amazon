@@ -1,4 +1,3 @@
-import { updateAuthor } from '../api/authorData';
 import { createBook, getBooks, updateBook } from '../api/bookData';
 import { showBooks } from '../pages/books';
 
@@ -44,7 +43,7 @@ const formEvents = () => {
     }
 
     // FIXME: ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
-    if (e.target.id.includes('submit-author')) {
+    if (e.target.id.includes('submit-book')) {
       const payload = {
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
@@ -63,22 +62,6 @@ const formEvents = () => {
       });
     }
     // FIXME:ADD CLICK EVENT FOR EDITING AN AUTHOR
-    if (e.target.id.includes('update-author')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      const payload = {
-        title: document.querySelector('#title').value,
-        description: document.querySelector('#description').value,
-        image: document.querySelector('#image').value,
-        price: document.querySelector('#price').value,
-        author_id: document.querySelector('#author_id').value,
-        sale: document.querySelector('#sale').checked,
-        firebaseKey,
-      };
-
-      updateAuthor(payload).then(() => {
-        getBooks().then(showBooks);
-      });
-    }
   });
 };
 
