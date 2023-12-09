@@ -64,7 +64,7 @@ const domEvents = () => {
     }
     if (e.target.id.includes('view-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleAuthor(firebaseKey).then(viewAuthors);
+      getBookDetails(firebaseKey).then(viewAuthors);
       // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     }
   });

@@ -44,7 +44,7 @@ const createAuthor = (payload) => new Promise((resolve, reject) => {
 
 // FIXME: GET SINGLE AUTHOR
 const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/authors/${firebaseKey}.json`, {
+  fetch(`${endpoint}/authors/"${firebaseKey}".json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

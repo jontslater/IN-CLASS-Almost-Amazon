@@ -5,7 +5,6 @@ import addAuthorForm from '../components/forms/addAuthorForm';
 import addBookForm from '../components/forms/addBookForm';
 import { showAuthors } from '../pages/authors';
 import { showBooks } from '../pages/books';
-import viewAuthors from '../pages/viewAuthors';
 // import viewAuthors from '../pages/viewAuthors';
 import viewBook from '../pages/viewBook';
 
@@ -64,7 +63,7 @@ const domEvents = () => {
     }
     if (e.target.id.includes('view-author-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleAuthor(firebaseKey).then(viewAuthors);
+      getBookDetails(firebaseKey).then(viewBook);
       // getSingleBook(firebaseKey).then(addBookForm); // using the callback method
     }
   });
